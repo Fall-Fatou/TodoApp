@@ -20,7 +20,7 @@ This feature helps maintain privacy and keeps user data safe.
 
 Screenshots:
 Here are some screenshots of the app working:
-![screenshots](chemin/vers/l/image.png)
+![hello_world.png](screenshots/hello_world.png)
 
 Usage:
 To use the app, simply add your tasks to the list and include the due date. You can then sort the tasks based on their importance and mark them as completed when done.
