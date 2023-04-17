@@ -1,0 +1,42 @@
+# register.html
+{% extends "base.html" %}
+{% block title %}Register System{% endblock %}
+
+{% block content %}
+
+<!-- The following if statement will display a message if there is any message available-->
+{% if message %}
+<div class="alert alert-secondary" role="alert">
+<p>{{ message }}</p>
+</div>
+{% endif %}
+
+<!-- The following form contains four fields: Full name, email, password1, and password2-->
+<form action="" method="post">
+    <div class="form-group">
+        <label for="Fullname">Full name</label>
+        <input name="fullname" class="form-control" id="inputFullName" aria-describedby="emailHelp" placeholder="Enter full name">
+        <small id="fullName" class="form-text text-muted">Please enter your full name(First name and Last name)</small>
+  </div>
+  <div class="form-group">
+        <label for="InputEmail">Email address</label>
+        <input name="email" class="form-control" id="InputEmail"  placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="InputPassword">Password</label>
+    <input type="password" name="password1" class="form-control" id="InputPassword" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="InputPassword">Password</label>
+    <input type="password" name="password1" class="form-control" id="InputPassword" placeholder="Password">
+  </div>
+
+    <!-- The following button will submit the form when clicked-->
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+<!-- End of the form -->
+{% endblock %}
+
+

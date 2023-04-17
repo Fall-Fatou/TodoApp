@@ -1,0 +1,85 @@
+# todolist html
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>FlaskTODO</h1>
+    <h3>{{ utc_dt }}</h3>
+    <hr>
+    <div class="content">
+    <form method="post">
+        <!-- Form for adding new todos with fields for todo content, due date, and degree of importance -->
+        <p>
+            <b><label for="content">Todo content</label></b>
+        </p>
+        <p>
+            <input type="text" name="content"
+                placeholder="Todo Content"></input>
+        </p>
+
+        <p>
+            <b><label for="due_date">Due Date</label></b>
+        </p>
+        <p>
+            <input type="date" name="due_date"
+                placeholder="Due Date"></input>
+        </p>
+
+        <p>
+            <b><label for="degree">Degree</label></b>
+        </p>
+        <p>
+            <input id="degree-0" name="degree" required type="radio" value="Important">
+            <label for="degree-0">Important</label>
+        </p>
+        <p>
+            <input id="degree-1" name="degree" required type="radio" value="Unimportant">
+            <label for="degree-1">Unimportant</label>
+        </p>
+        <!-- Button for submitting the form -->
+        <button type="submit">Submit</button>
+    </form>
+    <hr>
+    {% for todo in todos %}
+        <!-- Loop through all the todos and display them on the page -->
+        <div class="todo">
+            {% if todo['completed'] %}
+                <!-- If the todo is completed, display it with a strikethrough and the degree of importance
+                 due date -->
+                <p class="completed">{{ todo['content'] }} ({{ todo['degree'] }}) - {{ todo['due_date'] }}</p>
+            {% else %}
+                <!-- If the todo is not completed, display it with the degree of importance and due date
+                 and a button to mark it as complete -->
+                <div class="todo-content">
+                    <span class="incomplete todo-red">
+                        {% if todo['degree'] == 'Important' %}
+                            <!-- If the todo is important, display it with bold text -->
+                            <p><strong>{{ todo['content'] }} ({{ todo['degree'] }}) - {{ todo['due_date'] }}</strong></p>
+                        {% else %}
+                            <p>{{ todo['content'] }} ({{ todo['degree'] }}) - {{ todo['due_date'] }}</p>
+                        {% endif %}
+                    </span>
+                    <!-- Form for marking the todo as complete with a button -->
+                    <form method="POST" action="{{ url_for('complete_todo', id=todo['_id']) }}">
+                        <button type="submit" class="complete-button {% if todo['completed'] %}completed{% endif %}">
+                            {% if todo['completed'] %}
+                                <!-- If the todo is completed, display a checkmark icon -->
+                                <i class="fa fa-check-circle"></i>
+                            {% else %}
+                                <!-- If the todo is not completed, display an empty circle icon -->
+                                <i class="fa fa-circle-thin"></i>
+                            {% endif %}
+                        </button>
+                    </form>
+                </div>
+            {% endif %}
+            <!-- Form for deleting the todo with a button -->
+            <form method="POST" action="{{ url_for('delete', id=todo['_id']) }}" >
+                <input type="submit" value="Delete Todo"
+                       onclick="return confirm('Are you sure you want to delete this entry?')">
+            </form>
+        </div>
+    {% endfor %}
+
+    </div>
+
+{% endblock %}

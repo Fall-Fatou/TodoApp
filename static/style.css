@@ -1,0 +1,25 @@
+.completed {
+    text-decoration: line-through;
+    color: green;
+}
+.complete-button {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+  margin-left: 10px;
+}
+
+.complete-button.completed {
+  background-color: #ccc;
+  color: #000;
+}
+
+.todo-red {
+  color: red;
+}

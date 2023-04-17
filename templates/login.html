@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Login System{% endblock %}
+
+{% block content %}
+    <!-- This line checks if a variable named "message" has been defined.
+    If it has, it displays a message to the user in an alert box. -->
+    {% if message %}
+        <div class="alert alert-secondary" role="alert">
+            <p>{{ message }}</p>
+        </div>
+    {% endif %}
+     <!-- This line begins a form that will be submitted via the POST method. -->
+    <form action="" method="post">
+      <div class="form-group">
+          <label for="InputEmail">Email address</label>
+          <input name="email" class="form-control" id="InputEmail"  placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+        <div class="form-group">
+          <label for="InputPassword">Password</label>
+          <input type="password" name="password" class="form-control" id="InputPassword" placeholder="Password">
+      </div>
+        <!-- This line creates a button that will submit the form when clicked. -->
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
