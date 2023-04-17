@@ -38,6 +38,12 @@ Here are some screenshots of the app working:
   ![finished_task.png](screenshots/finished_task.png)
   
   
+  .Authentication system:
+  
+  ![authentication.png](screenshots/authenication.png)
+
+  
+  
 
 Usage:
 To use the app, simply add your tasks to the list and include the due date. You can then sort the tasks based on their importance and mark them as completed when done.
