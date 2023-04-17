@@ -19,14 +19,25 @@ TodoApp now includes a secure authentication system, ensuring that user data is 
 This feature helps maintain privacy and keeps user data safe.
 
 Screenshots:
-Here are some screenshots of the app working
-  .After the configuration
+Here are some screenshots of the app working:
+
+  .After the configuration:
   
 ![hello_world.png](screenshots/hello_world.png)
 
-  .After the tutorial
+  .After the tutorial:
   
 ![tutorial.png](screenshots/tutorial.png)
+
+  .New features:
+  
+  ![features.png](screenshots/features.png)
+  
+  .Complete task:
+  
+  ![finished_task.png](screenshots/finished_task.png)
+  
+  
 
 Usage:
 To use the app, simply add your tasks to the list and include the due date. You can then sort the tasks based on their importance and mark them as completed when done.
