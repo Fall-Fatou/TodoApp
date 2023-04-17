@@ -40,7 +40,7 @@ Here are some screenshots of the app working:
   
   .Authentication system:
   
-  ![authentication.png](screenshots/authenication.png)
+  ![authentication.png](screenshots/authentication.png)
 
   
   
